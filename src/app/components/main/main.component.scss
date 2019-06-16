@@ -1,0 +1,45 @@
+@import '../../../variables';
+
+:host {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.main-wrapper {
+    width: 100%;
+    display: flex;
+    flex: 1;
+
+    wr-sidebar {
+        width: 64px;
+        position: sticky;
+        top: 0;
+    }
+
+    wr-url-prompt {
+        flex: 1;
+    }
+
+    .workspace {
+        min-width: 0;
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+
+        .iframe-container {
+            display: flex;
+            flex: 1;
+            overflow: auto;
+            justify-content: center;
+            align-items: center;
+            background: $wr-bg-1;
+            background: radial-gradient(circle, $wr-bg-1 0%, $wr-bg-2 100%);
+
+            wr-iframe {
+                max-height: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}

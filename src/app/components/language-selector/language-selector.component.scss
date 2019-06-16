@@ -1,0 +1,27 @@
+
+.language-selector-wrapper {
+    width: 36px;
+    height: 36px;
+
+    button {
+        padding: 0;
+    }
+
+    .language-icon {
+        height: 100%;
+        width: 100%;
+        // border-radius: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+
+        &.en {
+            background-image: url('../../../assets/images/english-flag.png');
+        }
+
+        &.hu {
+            background-image: url('../../../assets/images/hungarian-flag.png');
+        }
+    }
+}

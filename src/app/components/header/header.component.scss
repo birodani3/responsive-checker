@@ -1,0 +1,23 @@
+@import '../../../variables';
+
+mat-toolbar {
+    padding: 0 16%;
+
+    .title {
+        font-size: 1.6rem;
+        font-weight: 100;
+
+        &::first-letter {
+            color: $wr-green;
+        }
+    }
+
+    .fill-space {
+        flex: 1 1 auto;
+    }
+
+    wr-language-selector {
+        margin: 0 20px;
+        flex: 0 1 auto;
+    }
+}

@@ -1,0 +1,53 @@
+<div class="sidebar-wrapper">
+    <button mat-icon-button [matTooltip]="'SWITCH_DEVICE' | translate" [matMenuTriggerFor]="deviceMenu">
+        <mat-icon>aspect_ratio</mat-icon>
+    </button>
+
+    <button mat-icon-button [matTooltip]="'ROTATE_SCREEN' | translate" (click)="rotateScreen()">
+        <mat-icon>screen_rotation</mat-icon>
+    </button>
+
+    <button mat-icon-button [matTooltip]="'REFRESH_PAGE' | translate" (click)="refreshPage()">
+        <mat-icon>cached</mat-icon>
+    </button>
+
+    <button mat-icon-button [matTooltip]="'RESET' | translate" (click)="resetUrl()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+
+<mat-menu #deviceMenu="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="phoneMenu">{{ 'PHONE' | translate }}</button>
+    <button mat-menu-item [matMenuTriggerFor]="tabletMenu">{{ 'TABLET' | translate }}</button>
+    <button mat-menu-item [matMenuTriggerFor]="monitorMenu">{{ 'MONITOR' | translate }}</button>
+    <button mat-menu-item [matMenuTriggerFor]="customSizeMenu">{{ 'CUSTOM_SIZE' | translate }}</button>
+</mat-menu>
+
+<mat-menu #phoneMenu="matMenu">
+    <button mat-menu-item *ngFor="let phone of devices.phones" (click)="setDimensions(phone)">
+        {{ phone.name }} ({{ phone.dimensions.width }} x {{ phone.dimensions.height }})
+    </button>
+</mat-menu>
+
+<mat-menu #tabletMenu="matMenu">
+    <button mat-menu-item *ngFor="let tablet of devices.tablets" (click)="setDimensions(tablet)">
+        {{ tablet.name }} ({{ tablet.dimensions.width }} x {{ tablet.dimensions.height }})
+    </button>
+</mat-menu>
+
+<mat-menu #monitorMenu="matMenu">
+    <button mat-menu-item *ngFor="let monitor of devices.monitors" (click)="setDimensions(monitor)">
+        {{ monitor.name }} ({{ monitor.dimensions.width }} x {{ monitor.dimensions.height }})
+    </button>
+</mat-menu>
+
+<mat-menu #customSizeMenu="matMenu">
+    <div mat-menu-item [disableRipple]="true" [formGroup]="customDeviceForm" (click)="$event.stopPropagation();" class="custom-size-menu-item">
+        <mat-form-field floatLabel="never">
+            <input matInput formControlName="customWidth" [placeholder]="'WIDTH' | translate" type="text" />
+        </mat-form-field>
+        <mat-form-field floatLabel="never">
+            <input matInput formControlName="customHeight" [placeholder]="'HEIGHT' | translate" type="text" />
+        </mat-form-field>
+    </div>
+</mat-menu>

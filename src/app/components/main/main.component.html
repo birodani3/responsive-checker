@@ -1,0 +1,11 @@
+<div class="main-wrapper">
+    <div *ngIf="(url$ | async); else urlPrompt" class="workspace">
+        <wr-sidebar></wr-sidebar>
+        <div class="iframe-container">
+            <wr-iframe></wr-iframe>
+        </div>
+    </div>
+    <ng-template #urlPrompt>
+        <wr-url-prompt></wr-url-prompt>
+    </ng-template>
+</div>

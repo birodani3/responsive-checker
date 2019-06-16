@@ -1,0 +1,10 @@
+.wr-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    wr-header {
+        position: sticky;
+        top: 0;
+    }
+}

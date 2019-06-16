@@ -1,0 +1,29 @@
+@import '../../../variables';
+
+:host {
+    background: $wr-dark-grey;
+}
+
+.sidebar-wrapper {
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+        color: $off-white;
+        margin: 8px 0;
+    }
+}
+
+.custom-size-menu-item {
+    height: initial;
+
+    mat-form-field {
+        display: block;
+    }
+
+    &:hover {
+        background: initial;
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "SWITCH_DEVICE": "Switch device",
+    "ROTATE_SCREEN": "Rotate screen",
+    "REFRESH_PAGE": "Refresh page",
+    "RESET": "Reset",
+    "PHONE": "Phone",
+    "TABLET": "Tablet",
+    "MONITOR": "Monitor",
+    "CUSTOM_SIZE": "Custom size",
+    "YOUR_URL": "Your URL",
+    "WIDTH": "Width",
+    "HEIGHT": "Height",
+    "WR_SLOGAN": "Check your site's responsiveness in minutes!",
+    "LANG": {
+        "en": "English",
+        "hu": "Hungarian"
+    }
+}

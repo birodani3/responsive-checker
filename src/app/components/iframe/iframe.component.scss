@@ -1,0 +1,16 @@
+@import '../../../variables';
+
+.iframe-container {
+    display: flex;
+    flex-direction: column;
+
+    wr-ruler {
+        width: 100%;
+        height: 40px;
+    }
+
+    iframe {
+        transition: width .2s ease-in-out, height .2s ease-in-out; 
+        will-change: width, height;
+    }
+}

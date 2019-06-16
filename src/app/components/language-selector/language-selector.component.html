@@ -1,0 +1,9 @@
+<div class="language-selector-wrapper">
+    <div [matMenuTriggerFor]="languageMenu" [ngClass]="selectedLanguage$ | async" class="language-icon"></div>
+</div>
+
+<mat-menu #languageMenu="matMenu">
+    <button *ngFor="let language of languages" mat-menu-item (click)="changeLanguage(language)">
+        {{ 'LANG.' + language | translate }}
+    </button>
+</mat-menu>

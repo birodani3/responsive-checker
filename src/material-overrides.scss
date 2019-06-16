@@ -1,0 +1,9 @@
+@import './variables';
+
+button.mat-menu-item:hover {
+    border-bottom: 2px solid $wr-green;
+}
+
+.mat-form-field-underline .mat-form-field-ripple {
+    background: $wr-green;
+}

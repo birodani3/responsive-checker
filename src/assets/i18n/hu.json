@@ -1,0 +1,19 @@
+
+{
+    "SWITCH_DEVICE": "Eszköz kiválasztása",
+    "ROTATE_SCREEN": "Képernyő elforgatása",
+    "REFRESH_PAGE": "Képernyő újratöltése",
+    "RESET": "Visszalépés",
+    "PHONE": "Telefon",
+    "TABLET": "Tablet",
+    "MONITOR": "Monitor",
+    "CUSTOM_SIZE": "Egyedi méret",
+    "YOUR_URL": "Az oldal URL-je",
+    "WIDTH": "Szélesség",
+    "HEIGHT": "Magasság",
+    "WR_SLOGAN": "Ellenőrizd weboldalad reszponzivitását néhány perc alatt!",
+    "LANG": {
+        "en": "Angol",
+        "hu": "Magyar"
+    }
+}

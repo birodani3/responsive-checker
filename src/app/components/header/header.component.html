@@ -1,0 +1,6 @@
+<mat-toolbar color="primary">
+    <span class="title">WebyMon Responsive</span>
+    <span class="fill-space"></span>
+    <span *ngIf="dimensions$ | async as dimensions">({{ dimensions.width }} x {{ dimensions.height }})</span>
+    <wr-language-selector></wr-language-selector>
+</mat-toolbar>

@@ -1,0 +1,12 @@
+<div class="ruler-container" *ngIf="hundreds$ | async as hundreds">
+    <div class="numbers-container">
+        <div *ngFor="let index of hundreds | times" class="hundred-px">
+            <div class="number">{{ index * 100 }}</div>
+        </div>
+    </div>
+    <div class="ticks-container">
+        <div *ngFor="let tick of hundreds | times" class="hundred-px">
+            <div *ngFor="let tenPx of 10 | times" class="ten-px"></div>
+        </div>
+    </div>
+</div>

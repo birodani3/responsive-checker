@@ -1,0 +1,4 @@
+<div class="iframe-container" [style.width.px]="(dimensions$ | async).width">
+    <wr-ruler></wr-ruler>
+    <iframe #iframe [width]="(dimensions$ | async).width" [height]="(dimensions$ | async).height" [src]="url$ | async" frameborder="0"></iframe>
+</div>
