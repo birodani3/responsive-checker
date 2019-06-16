@@ -1,12 +1,12 @@
 import { MatToolbarModule, MatInputModule, MatIconModule, MatButtonModule, MatMenuModule, MatTooltipModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NgModule, InjectionToken } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
 
 import { EffectsModule } from '@ngrx/effects';
-import { StoreModule } from '@ngrx/store';
+import { StoreModule, ActionReducerMap } from '@ngrx/store';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -22,9 +22,11 @@ import {
 } from '@components';
 import { AppEffects } from '@effects';
 import { TimesPipe } from '@pipes';
-import { reducers } from '@store';
+import { reducers, AppState } from '@store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+export const REDUCER_TOKEN = new InjectionToken<ActionReducerMap<AppState>>('root reducer');
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -57,7 +59,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         HttpClientModule,
         FormsModule,
         ReactiveFormsModule,
-        StoreModule.forRoot(reducers),
+        StoreModule.forRoot(REDUCER_TOKEN),
         EffectsModule.forRoot([AppEffects]),
         TranslateModule.forRoot({
             loader: {
@@ -73,7 +75,10 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         MatMenuModule,
         MatIconModule
     ],
-    providers: [],
+    providers: [{
+        provide: REDUCER_TOKEN,
+        useValue: reducers
+    }],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
