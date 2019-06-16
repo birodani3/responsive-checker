@@ -4,7 +4,7 @@ import { Store, select } from '@ngrx/store';
 
 import { Observable } from 'rxjs';
 
-import { AppState, selectDimensions } from '@store';
+import { AppState, selectDimensions, selectUrl } from '@store';
 import { Dimensions } from '@models';
 
 @Component({
@@ -13,9 +13,11 @@ import { Dimensions } from '@models';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+    public url$: Observable<string>;
     public dimensions$: Observable<Dimensions>;
 
     constructor(private store: Store<AppState>) {
+        this.url$ = this.store.pipe(select(selectUrl));
         this.dimensions$ = this.store.pipe(select(selectDimensions));
     }
 }
