@@ -6,8 +6,7 @@ export const initialState: AppState = {
     width: environment.defaultWidth,
     height: environment.defaultHeight,
     orientation: Orientation.Horizontal,
-    language: <Language>navigator.language.substr(0, 2),
-    iframeLanguage: null
+    language: <Language>navigator.language.substr(0, 2)
 };
 
 export interface AppState {
@@ -15,6 +14,5 @@ export interface AppState {
     width: number;
     height: number;
     language: Language;
-    iframeLanguage: Language;
     orientation: Orientation;
 }
